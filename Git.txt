@@ -20,9 +20,8 @@ ssh -T git@github.com
 第一次发布项目
 $ git add .    //文件->暂存区
 $ git commit -m "注释信息"
-$ git remote add origin 
-
-https://github.com/XHuangYa/mygitRemote.git
+$ git remote add origin             
+https://github.com/XHuangYa/mygitRemote.git                  //删除remote$ git remote remove gitremote
 $ git push origin -u master(默认主分支)  //本地->远程
 
 第一次下载项目
@@ -30,7 +29,7 @@ $ git clone https://github.com/XHuangYa/mygitRemote.git
 
 提交
 $ git add .
-$ git com mit -m "注释信息"
+$ git commit -m "注释信息"
 $ git push origin master(默认主分支)
 
 
