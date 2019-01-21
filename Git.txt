@@ -1,5 +1,5 @@
-XHuangYa
-liting8225
+﻿username:XHuangYa
+password:liting8225
 
 配置ssh:先在本地配置，发送给远程（ssh是本地计算机和远程计算机关
 
