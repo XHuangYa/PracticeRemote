@@ -89,7 +89,7 @@ $ git branch --merged
 
 查看未合并到当前分支的分支
 $ git branch --no-merged
-
+***********************************************************************
 
 EGit:在eclipse中使用git
 配置:
@@ -127,26 +127,18 @@ Team-Pull
 
 文件已经变成普通的工作空间中的文件
 		  add and index //添加到本地暂存区
-		  commit and push  或者 remote-push 		
-
-//提交到远程分支
+		  commit and push  或者 remote-push 		//提交到远程分支
+****************************************************************************		  
 		  
 冲突解决方式 ——2
-发现冲突：Team-pull					  //
+发现冲突：Team-pull					  // 更新服务端的分支内容到本地分支
 
-更新服务端的分支内容到本地分支
 解决冲突：Team-stashes-stash changes  //将更改的代码隐藏起来
-		  Team-pull 				  //
-
-更新服务端的分支内容到本地分支
-		  Team-stashes-stash changes-apply stashed 
-
-changes   //将隐藏的内容取出来
+		  Team-pull 				  //更新服务端的分支内容到本地分支
+		  Team-stashes-stash changes-apply stashed changes   //将隐藏的内容取出来
 		  修改冲突 ，直接修改或者merge tool
 		  Team-commit-add and index
-		  commit and push  或者 remote-push 		
-
-//提交到远程分支
+		  commit and push  或者 remote-push 		//提交到远程分支
 		  
 		  
 
