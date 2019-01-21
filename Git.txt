@@ -1,0 +1,163 @@
+XHuangYa
+liting8225
+
+配置ssh:先在本地配置，发送给远程（ssh是本地计算机和远程计算机关
+
+联）
+先在本地生成ssh
+ssh-keygen -t rsa -C 1483401993@qq.com 一直回车
+
+发送给远程
+gitHub --> settings -->ssh and GPG keys --> new sshkeys 
+title 任意
+key 粘贴本地的key
+
+测试连通性
+ssh -T git@github.com
+
+如果本地和远程成功通信 ，可以再.ssh找到known hosts
+
+第一次发布项目
+$ git add .    //文件->暂存区
+$ git commit -m "注释信息"
+$ git remote add origin 
+
+https://github.com/XHuangYa/mygitRemote.git
+$ git push origin -u master(默认主分支)  //本地->远程
+
+第一次下载项目
+$ git clone https://github.com/XHuangYa/mygitRemote.git
+
+提交
+$ git add .
+$ git com mit -m "注释信息"
+$ git push origin master(默认主分支)
+
+
+更新（远程到本地）
+$git pull
+
+比对修改前后的文件
+$ git diff 文件名
+
+查看文件内容
+$ cat 文件名
+
+Git撤销修改
+$ git checkout --文件名
+[1].文件自动修改后，还没有放到暂存区——使用  撤销修改回到个版本
+
+库一样的状态
+[2].文件已经放入暂存区，接着做了修改——使用  撤销修改就回到添加
+
+暂存区后的状态
+
+git查看项目日志
+$ git log
+
+简化查看项目日志
+$git log --pretty=oneline
+
+*****************版本切换*****************
+查看版本变化
+$ git reflog
+
+切换版本————1
+$ git reset --hard head   //hard 代表强行   head代表当前最新的
+
+切换版本————2
+$ git reset --hard 版本号   //$ git reflog可以查看版本号
+
+
+*****************分支管理*****************
+查看分支
+$ git branch
+
+创建分支
+$ git branch 分支名
+
+切换分支
+$ git checkout 分支名
+
+删除分支(已经合并到主分支的分支才可以删除)
+$ git branch -d 分支名
+
+创建并且切换到该分支
+$ git checkout -b 分支名
+
+查看已经合并到当前分支的分支
+$ git branch --merged
+
+查看未合并到当前分支的分支
+$ git branch --no-merged
+
+
+EGit:在eclipse中使用git
+配置:
+1.Team-Git-Configrarion  用户名   邮箱
+2.General-NetWork Conditions -SSH2   选中.ssh目录
+
+第一次发布
+Team-shareProject 
+add To index   //加到暂存区
+commit 		   //提交到本地分支
+remote-push    //推送到远程
+
+
+提交
+commit and push  和commit 的区别
+commit：不能单独push某一个文件，只能push项目
+commit and push：可以 单独push某一个文件
+
+第一次下载
+File-import-Git-https/ssh
+
+更新
+Team-Pull
+
+冲突解决方式 ——1
+发现冲突：Team-synchronize workspace
+解决冲突：
+		  add and index //添加到本地暂存区
+		  commit  		//提交到本地分支
+		  pull    		//更新服务端的分之内容
+
+到本地分支
+		  修改冲突 ，直接修改或者merge tool
+						————此时的
+
+文件已经变成普通的工作空间中的文件
+		  add and index //添加到本地暂存区
+		  commit and push  或者 remote-push 		
+
+//提交到远程分支
+		  
+冲突解决方式 ——2
+发现冲突：Team-pull					  //
+
+更新服务端的分支内容到本地分支
+解决冲突：Team-stashes-stash changes  //将更改的代码隐藏起来
+		  Team-pull 				  //
+
+更新服务端的分支内容到本地分支
+		  Team-stashes-stash changes-apply stashed 
+
+changes   //将隐藏的内容取出来
+		  修改冲突 ，直接修改或者merge tool
+		  Team-commit-add and index
+		  commit and push  或者 remote-push 		
+
+//提交到远程分支
+		  
+		  
+
+
+
+
+
+
+
+
+
+
+
